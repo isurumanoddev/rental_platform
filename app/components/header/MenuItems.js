@@ -2,9 +2,9 @@
 import React from 'react';
 import {MenuItem} from "@mui/material";
 
-function MenuItems({label}) {
+function MenuItems({label,onClick}) {
     return (
-        <MenuItem
+        <MenuItem onClick={onClick}
             className={" font-semibold  text-sm text-black"}>{label}</MenuItem>
 
     );

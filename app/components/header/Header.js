@@ -3,15 +3,20 @@ import React, {useState} from 'react';
 import Image from "next/image";
 import {AccountCircle, Language, Search, Menu} from "@mui/icons-material";
 import {IconButton, MenuList, Paper} from "@mui/material";
-import MenuItems from "@/components/header/MenuItems";
+import MenuItems from "@/app/components/header/MenuItems";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
+
 
 function Header() {
+const registerState = useRegisterModal()
+
 
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = () => {
         setIsOpen((value) => !value)
     }
+
 
     return (
         <header className={"sticky top-0 z-10 bg-white grid grid-cols-3 shadow-md p-5 md:px-10 items-center"}>
@@ -42,7 +47,7 @@ function Header() {
                     <IconButton onClick={toggleOpen} className={"p-1"}>
                         <Menu/>
                     </IconButton>
-                    <IconButton className={"p-1"}>
+                    <IconButton onClick={registerState.onOpen}  className={"p-1"}>
                         <AccountCircle/>
                     </IconButton>
 
@@ -52,8 +57,9 @@ function Header() {
 
                 <div className={`translate duration-500  ${isOpen ? "translate-y-0 opacity-100 " : "translate-y-full opacity-0 "}`}>
                     <div
+
                         className={"absolute bg-white  w-36 flex flex-col rounded-xl h-auto top-16 right-2 overflow-hidden   "}>
-                        <MenuItems label={"Login"}/>
+                        <MenuItems label={"Sign Up"} onClick={registerState.onOpen} />
                         <MenuItems label={"Logout"}/>
                         <MenuItems label={"Login"}/>
                     </div>

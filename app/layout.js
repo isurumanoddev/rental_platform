@@ -1,8 +1,9 @@
 import './globals.css'
 import {Sora} from 'next/font/google'
-import Header from "@/components/header/Header";
-import Modal from "@/components/modals/Modal";
-import RegisterModal from "@/components/modals/RegisterModal";
+import Header from "@/app/components/header/Header";
+import Modal from "@/app/components/modals/Modal";
+import RegisterModal from "@/app/components/modals/RegisterModal";
+import React from "react";
 
 const inter = Sora({subsets: ['latin']})
 
