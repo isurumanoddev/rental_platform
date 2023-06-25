@@ -45,7 +45,7 @@ function Modal({
                         <div className={"flex flex-col  rounded-lg border-0 bg-white w-full outline-none shadow-lg  "}>
 
                             <div className={"flex justify-center  items-center relative p-4 border-b-2"}>
-                                <p className={"font-semibold text-sm"}>Login</p>
+                                <p className={"font-semibold text-sm"}>{title}</p>
                                 <IconButton onClick={handleClose} className={"text-sm text-black p-1 absolute right-1"}
                                             fontSize={"small"}>
                                     <Close fontSize={"small"}/>
@@ -53,14 +53,14 @@ function Modal({
                             </div>
                             {/*Body*/}
                             <div className={"flex flex-col gap-2 relative p-6 "}>
-                                asdsad
+                                {body}
                             </div>
                             {/*footer*/}
                             <div className={"flex justify-center   items-center relative p-3 border-t-2"}>
                                 <Button className={"w-full bg-rose-500 text-white hover:bg-rose-500"}>Hello</Button>
 
                             </div>
-                        </div>♣
+                        </div>
                     </div>
                 </div>
 
