@@ -8,9 +8,9 @@ function Banner() {
             <Image
                 src={"https://links.papareact.com/0fm"}
                 alt={"banner"}
-                layout={"fill"}
-                objectFit={"cover"}
-                objectPosition={"bottom"}
+                    layout={"fill"}
+                    objectFit={"cover"}
+                    objectPosition={"bottom"}
 
 
             />
