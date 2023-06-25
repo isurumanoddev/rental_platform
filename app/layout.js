@@ -2,6 +2,7 @@ import './globals.css'
 import {Sora} from 'next/font/google'
 import Header from "@/components/header/Header";
 import Modal from "@/components/modals/Modal";
+import RegisterModal from "@/components/modals/RegisterModal";
 
 const inter = Sora({subsets: ['latin']})
 
@@ -15,7 +16,8 @@ export default function RootLayout({children}) {
         <html lang="en">
 
         <body className={inter.className}>
-        <Modal isOpen={true}/>
+
+        <RegisterModal/>
         <Header/>
         {children}</body>
         </html>

@@ -5,7 +5,7 @@ import {MenuItem} from "@mui/material";
 function MenuItems({label}) {
     return (
         <MenuItem
-            className={"py-1 font-semibold  text-sm text-black"}>{label}</MenuItem>
+            className={" font-semibold  text-sm text-black"}>{label}</MenuItem>
 
     );
 }

@@ -48,15 +48,19 @@ function Header() {
 
 
                 </div>
-                {
-                    isOpen && <div
-                        className={"absolute bg-white  w-36 flex flex-col rounded-xl h-auto top-20 right-2 overflow-hidden   "}>
 
-                            <MenuItems label={"Login"}/>
-                            <MenuItems label={"Logout"}/>
-                            <MenuItems label={"Login"}/>
+
+                <div className={`translate duration-500  ${isOpen ? "translate-y-0 opacity-100 " : "translate-y-full opacity-0 "}`}>
+                    <div
+                        className={"absolute bg-white  w-36 flex flex-col rounded-xl h-auto top-16 right-2 overflow-hidden   "}>
+                        <MenuItems label={"Login"}/>
+                        <MenuItems label={"Logout"}/>
+                        <MenuItems label={"Login"}/>
                     </div>
-                }
+
+
+                </div>
+
 
             </div>
         </header>
