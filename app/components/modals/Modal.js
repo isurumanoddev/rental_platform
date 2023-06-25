@@ -60,7 +60,7 @@ function Modal({
 
         <div
             className={" flex items-center   justify-center fixed top-0 bottom-0 right-0 left-0 z-50 bg-neutral-800/70 outline-none   "}>
-            <div className={"my-10 mx-5 md:mx-auto  w-4/6 px-5 h-auto max-w-2xl"}>
+            <div className={"my-10 md:mx-auto w-full mx-auto    px-5 h-auto max-w-4xl"}>
 
                 <div
                     className={`translate duration-500 h-full ${showModel ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>

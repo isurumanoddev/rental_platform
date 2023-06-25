@@ -16,7 +16,7 @@ function Input({id, label, type, disabled, formatPrice, required, errors, regist
             <label
                 className={`
           absolute 
-          text-md
+          text-sm
           duration-150 
           transform 
           -translate-y-3 
@@ -28,6 +28,8 @@ function Input({id, label, type, disabled, formatPrice, required, errors, regist
           peer-placeholder-shown:translate-y-0 
           peer-focus:scale-75
           peer-focus:-translate-y-4
+          peer-focus:text-black
+          
           ${errors[id] ? 'text-rose-500' : 'text-zinc-400'}
         `}
             >
