@@ -12,6 +12,7 @@ import {signOut} from "next-auth/react";
 function Header({currentUser}) {
     const registerState = useRegisterModal()
     const loginState = useLoginModal()
+        console.log("currentUser : ",currentUser)
 
 
     const [isOpen, setIsOpen] = useState(false);

@@ -1,11 +1,12 @@
 import './globals.css'
 import {Sora} from 'next/font/google'
 import Header from "@/app/components/header/Header";
-import Modal from "@/app/components/modals/Modal";
+
 import RegisterModal from "@/app/components/modals/RegisterModal";
 import React from "react";
 import LoginModal from "@/app/components/modals/LoginModal";
-import {getCurrentUser} from "@/app/actions/getCurrentUser";
+import getCurrentUser from "@/app/actions/getCurrentUser";
+
 
 const inter = Sora({subsets: ['latin']})
 
@@ -15,7 +16,8 @@ export const metadata = {
 }
 
 export default async function RootLayout({children}) {
-    const currentUser = await getCurrentUser()
+    const currentUser = await  getCurrentUser()
+
 
     return (
         <html lang="en">

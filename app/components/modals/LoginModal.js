@@ -10,7 +10,7 @@ import Input from "@/app/components/Input";
 // import axios from "axios";
 import {Button} from "@mui/material";
 import {Google} from "@mui/icons-material";
-import axios from "axios";
+
 import UseLoginModal from "@/app/hooks/useLoginModal";
 import {signIn} from "next-auth/react";
 import {useRouter} from "next/navigation";
@@ -23,7 +23,7 @@ function LoginModal() {
     const loginState = UseLoginModal();
     const [isLoading, setIsLoading] = useState(false)
 
-    console.log("login", loginState.isOpen)
+
 
 
     const {register, handleSubmit, formState: {errors}} = useForm({
@@ -45,8 +45,15 @@ function LoginModal() {
                 if (callback?.ok) {
                     console.log("Login success")
                     router.refresh()
+                    loginState.onClose();
                 }
+                if (callback?.error) {
+                    console.log("Login error ",callback.error)
+
+                }
+
             })
+            .catch((e) => console.log("Login auth  errors ",e))
 
 
     }
