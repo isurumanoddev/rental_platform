@@ -11,6 +11,7 @@ import Input from "@/app/components/Input";
 // import axios from "axios";
 import {Button} from "@mui/material";
 import {Google} from "@mui/icons-material";
+import axios from "axios";
 
 
 function RegisterModal() {
@@ -30,14 +31,14 @@ function RegisterModal() {
 
     const onSubmit = (data) => {
         setIsLoading(true);
-        // axios.post("/api/register", data)
-        //     .then(() => {
-        //         registerState.onClose()
-        //         setIsLoading(false)
-        //     } )
-        //     .catch(errors => {
-        //         console.log(errors)
-        //     })
+        axios.post("/api/register", data)
+            .then(() => {
+                registerState.onClose()
+                setIsLoading(false)
+            } )
+            .catch(errors => {
+                console.log(errors)
+            })
 
 
     }
