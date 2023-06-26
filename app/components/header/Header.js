@@ -5,10 +5,12 @@ import {AccountCircle, Language, Search, Menu} from "@mui/icons-material";
 import {IconButton, MenuList, Paper} from "@mui/material";
 import MenuItems from "@/app/components/header/MenuItems";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 
 function Header() {
 const registerState = useRegisterModal()
+const loginState = useLoginModal()
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +49,7 @@ const registerState = useRegisterModal()
                     <IconButton onClick={toggleOpen} className={"p-1"}>
                         <Menu/>
                     </IconButton>
-                    <IconButton onClick={registerState.onOpen}  className={"p-1"}>
+                    <IconButton onClick={loginState.onOpen}  className={"p-1"}>
                         <AccountCircle/>
                     </IconButton>
 
@@ -60,8 +62,7 @@ const registerState = useRegisterModal()
 
                         className={"absolute bg-white  w-36 flex flex-col rounded-xl h-auto top-16 right-2 overflow-hidden   "}>
                         <MenuItems label={"Sign Up"} onClick={registerState.onOpen} />
-                        <MenuItems label={"Logout"}/>
-                        <MenuItems label={"Login"}/>
+                        <MenuItems label={"Login"} onClick={loginState.onOpen} />
                     </div>
 
 

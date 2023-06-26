@@ -4,6 +4,7 @@ import Header from "@/app/components/header/Header";
 import Modal from "@/app/components/modals/Modal";
 import RegisterModal from "@/app/components/modals/RegisterModal";
 import React from "react";
+import LoginModal from "@/app/components/modals/LoginModal";
 
 const inter = Sora({subsets: ['latin']})
 
@@ -19,6 +20,7 @@ export default function RootLayout({children}) {
         <body className={inter.className}>
 
         <RegisterModal/>
+        <LoginModal/>
         <Header/>
         {children}</body>
         </html>
