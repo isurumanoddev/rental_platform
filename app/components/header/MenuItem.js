@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 
-function MenuItem({label}) {
+function MenuItem({label,onClick}) {
     return (
          <div
       onClick={onClick}

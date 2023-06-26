@@ -5,8 +5,9 @@ import MenuItem from "@/app/components/header/MenuItem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import {signOut} from "next-auth/react";
-import {AiOutlineMenu} from "react-icons/ai";
-import {Avatar} from "@mui/material";
+
+import {Avatar, IconButton} from "@mui/material";
+import {Menu} from "@mui/icons-material";
 
 function UserMenu({currentUser}) {
 
@@ -16,31 +17,29 @@ function UserMenu({currentUser}) {
         setIsOpen((value) => !value)
     }
 
-     const registerState = useRegisterModal()
+    const registerState = useRegisterModal()
     const loginState = useLoginModal()
     return (
-         <div className="relative">
-      <div className="flex flex-row items-center gap-3">
-        <div
+        <div className="relative">
+            <div className="flex flex-row items-center gap-3">
+                <div
 
-          className="
-            flex
+                    className="
+                    hidden md:flex
             text-sm
             font-semibold
-            py-3
+            py-2
             px-4
             rounded-full
             hover:bg-neutral-100
             transition
             cursor-pointer
           "
-        >
-          Airbnb your home
-        </div>
-        <div
-
-        className="
-          p-4
+                >
+                    Airbnb your home
+                </div>
+                <div className="
+          px-2
           md:py-1
           md:px-2
           border-[1px]
@@ -48,22 +47,24 @@ function UserMenu({currentUser}) {
           flex
           flex-row
           items-center
-          gap-3
+          gap-0.5
           rounded-full
           cursor-pointer
           hover:shadow-md
           transition
           "
-        >
-          <AiOutlineMenu onClick={toggleOpen} />
-          <div className="flex">
-            <Avatar fontSize={"small"}  />
-          </div>
-        </div>
-      </div>
-      {isOpen && (
-        <div
-          className="
+                ><IconButton className={"p-1"}>
+                    <Menu onClick={toggleOpen}/>
+                </IconButton>
+                    <IconButton className={"p-1"}>
+                        <Avatar className={"text-[10px]"} fontSize={"small"}/>
+                    </IconButton>
+
+                </div>
+            </div>
+            {isOpen && (
+                <div
+                    className="
             absolute
             rounded-xl
             shadow-md
@@ -75,52 +76,54 @@ function UserMenu({currentUser}) {
             top-12
             text-sm
           "
-        >
-          <div className="flex flex-col cursor-pointer">
-            {currentUser ? (
-              <>
-                <MenuItem
-                  label="My trips"
+                >
+                    <div className="flex flex-col cursor-pointer">
+                        {currentUser ? (
+                            <>
+                                <MenuItem
+                                    label="My trips"
 
-                />
-                <MenuItem
-                  label="My favorites"
+                                />
+                                <MenuItem
+                                    label="My favorites"
 
-                />
-                <MenuItem
-                  label="My reservations"
+                                />
+                                <MenuItem
+                                    label="My reservations"
 
-                />
-                <MenuItem
-                  label="My properties"
+                                />
+                                <MenuItem
+                                    label="My properties"
 
-                />
-                <MenuItem
-                  label="Airbnb your home"
+                                />
+                                <MenuItem
+                                    label="Airbnb your home"
 
-                />
-                <hr />
-                <MenuItem
-                  label="Logout"
-                  onClick={() => signOut()}
-                />
-              </>
-            ) : (
-              <>
-                <MenuItem
-                  label="Login"
+                                />
+                                <hr/>
+                                <MenuItem
+                                    label="Logout"
+                                    onClick={() => signOut()}
+                                />
+                            </>
+                        ) : (
+                            <>
+                                <MenuItem
+                                    label="Login"
+                                    onClick={loginState.onOpen}
 
-                />
-                <MenuItem
-                  label="Sign up"
+                                />
+                                <MenuItem
+                                    label="Sign up"
+                                    onClick={registerState.onOpen}
 
-                />
-              </>
+                                />
+                            </>
+                        )}
+                    </div>
+                </div>
             )}
-          </div>
         </div>
-      )}
-    </div>
     );
 }
 

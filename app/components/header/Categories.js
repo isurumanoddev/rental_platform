@@ -102,12 +102,12 @@ function Categories() {
     return (
         <div
             className="
-          pt-4
+          pt-3
           flex
           flex-row
           items-center
           justify-between
-          overflow-x-auto
+          overflow-hidden
         "
         >
             {categories.map((item) => (
