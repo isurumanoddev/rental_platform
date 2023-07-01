@@ -1,7 +1,7 @@
 'use client';
 import React, {useState} from 'react';
 import useRegisterModal from "@/app/hooks/useRegisterModal";
-
+import {toast} from 'react-hot-toast'
 
 import {FieldValues, SubmitHandler, useForm} from "react-hook-form";
 
@@ -37,6 +37,8 @@ function RegisterModal() {
             })
             .catch(error => {
                 console.log(error)
+                toast.error("Something went wrong")
+
             })
     }
 

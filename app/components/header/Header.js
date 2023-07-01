@@ -6,7 +6,8 @@ import UserMenu from "@/app/components/header/UserMenu";
 import Logo from "@/app/components/header/Logo";
 
 
-function Header() {
+
+function Header({currentUser}) {
 
 
     return (
@@ -15,7 +16,7 @@ function Header() {
                 <div className="max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-2 px-4">
                     <div className=" flex flex-row items-center justify-between gap-3 md:gap-0">
                         <Logo/>
-                        <UserMenu/>
+                        <UserMenu currentUser={currentUser}/>
 
                     </div>
                 </div>

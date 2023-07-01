@@ -6,6 +6,7 @@ import RegisterModal from "@/app/components/modals/RegisterModal";
 import React from "react";
 import LoginModal from "@/app/components/modals/LoginModal";
 import getCurrentUser from "@/app/actions/getCurrentUser";
+import ToasterProvider from "@/app/provider/ToasterProvider";
 
 
 const inter = Sora({subsets: ['latin']})
@@ -26,6 +27,7 @@ export default async function RootLayout({children}) {
 
         <RegisterModal/>
         <LoginModal/>
+        <ToasterProvider/>
         <Header currentUser={currentUser}/>
         {children}</body>
         </html>

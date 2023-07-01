@@ -14,6 +14,7 @@ import {Google} from "@mui/icons-material";
 import UseLoginModal from "@/app/hooks/useLoginModal";
 import {signIn} from "next-auth/react";
 import {useRouter} from "next/navigation";
+import {toast} from 'react-hot-toast'
 
 
 
@@ -22,6 +23,9 @@ function LoginModal() {
 
     const loginState = UseLoginModal();
     const [isLoading, setIsLoading] = useState(false)
+
+    const notify = () => toast('Here is your toast.');
+
 
 
 
@@ -44,11 +48,13 @@ function LoginModal() {
 
                 if (callback?.ok) {
                     console.log("Login success")
+                    toast.success("Login Success")
+
                     router.refresh()
                     loginState.onClose();
                 }
                 if (callback?.error) {
-                    console.log("Login error ",callback.error)
+                    toast.success("Something Went Wrong ")
 
                 }
 
@@ -84,7 +90,7 @@ function LoginModal() {
     )
     const footerContent = (
         <div className={"flex flex-col gap-3 mt-3"}>
-            <Button className={" py-2 flex gap-5 outline-none text-white   bg-black text-sm hover:bg-black  "}
+            <Button onClick={notify} className={" py-2 flex gap-5 outline-none text-white   bg-black text-sm hover:bg-black  "}
                     startIcon={<Google/>}>
                 Sign in with Google
             </Button>

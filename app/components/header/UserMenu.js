@@ -53,8 +53,8 @@ function UserMenu({currentUser}) {
           hover:shadow-md
           transition
           "
-                ><IconButton className={"p-1"}>
-                    <Menu onClick={toggleOpen}/>
+                ><IconButton  onClick={toggleOpen} className={"p-1"}>
+                    <Menu />
                 </IconButton>
                     <IconButton className={"p-1"}>
                         <Avatar className={"text-[10px]"} fontSize={"small"}/>
