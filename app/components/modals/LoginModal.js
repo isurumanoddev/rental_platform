@@ -54,7 +54,7 @@ function LoginModal() {
                     loginState.onClose();
                 }
                 if (callback?.error) {
-                    toast.success("Something Went Wrong ")
+                    toast.error("Something Went Wrong ")
 
                 }
 

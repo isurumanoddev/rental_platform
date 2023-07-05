@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState} from 'react';
+import React , {useEffect, useState} from 'react';
 import MenuItem from "@/app/components/header/MenuItem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
@@ -8,14 +8,23 @@ import {signOut} from "next-auth/react";
 
 import {Avatar, IconButton} from "@mui/material";
 import {Menu} from "@mui/icons-material";
+import {toast} from "react-hot-toast";
 
 function UserMenu({currentUser}) {
 
     const [isOpen, setIsOpen] = useState(false);
 
+
     const toggleOpen = () => {
         setIsOpen((value) => !value)
+
     }
+    const logOut = () => {
+        signOut().then(r => toast.success("Logout Success") )
+
+    }
+
+    
 
     const registerState = useRegisterModal()
     const loginState = useLoginModal()
@@ -53,7 +62,8 @@ function UserMenu({currentUser}) {
           hover:shadow-md
           transition
           "
-                ><IconButton  onClick={toggleOpen} className={"p-1"}>
+                >
+                    <IconButton  onClick={toggleOpen} className={`p-1 ${isOpen ? "bg-rose-200" : "bg-transparent"}`}>
                     <Menu />
                 </IconButton>
                     <IconButton className={"p-1"}>
@@ -103,7 +113,7 @@ function UserMenu({currentUser}) {
                                 <hr/>
                                 <MenuItem
                                     label="Logout"
-                                    onClick={() => signOut()}
+                                    onClick={logOut}
                                 />
                             </>
                         ) : (

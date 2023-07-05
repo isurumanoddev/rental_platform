@@ -36,7 +36,7 @@ function RegisterModal() {
 
             })
             .catch(error => {
-                console.log(error)
+                console.log("error ",error)
                 toast.error("Something went wrong")
 
             })
