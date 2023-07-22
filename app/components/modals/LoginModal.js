@@ -24,7 +24,6 @@ function LoginModal() {
     const loginState = UseLoginModal();
     const [isLoading, setIsLoading] = useState(false)
 
-    const notify = () => toast('Here is your toast.');
 
 
 
@@ -59,7 +58,7 @@ function LoginModal() {
                 }
 
             })
-            .catch((e) => console.log("Login auth  errors ",e))
+            .catch((e) => console.log("Login auths  errors ",e))
 
 
     }
@@ -90,7 +89,7 @@ function LoginModal() {
     )
     const footerContent = (
         <div className={"flex flex-col gap-3 mt-3"}>
-            <Button onClick={notify} className={" py-2 flex gap-5 outline-none text-white   bg-black text-sm hover:bg-black  "}
+            <Button  className={" py-2 flex gap-5 outline-none text-white   bg-black text-sm hover:bg-black  "}
                     startIcon={<Google/>}>
                 Sign in with Google
             </Button>

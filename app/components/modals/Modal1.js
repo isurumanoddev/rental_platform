@@ -144,7 +144,7 @@ const Modal = ({
                                 >
 
                                     <Button
-                                         onClick={handleSubmit}
+                                        onClick={handleSubmit}
                                         className={"w-full bg-rose-500 text-white hover:bg-rose-500"}>{actionLabel}</Button>
 
                                 </div>
