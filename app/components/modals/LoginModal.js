@@ -54,6 +54,7 @@ function LoginModal() {
                 }
                 if (callback?.error) {
                     toast.error("Something Went Wrong ")
+                    console.log("Login Error ",callback.error)
 
                 }
 

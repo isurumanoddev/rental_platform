@@ -1,6 +1,4 @@
 'use client';
-
-
 import {TbBeach, TbMountain, TbPool} from 'react-icons/tb';
 import {
     GiBarn,
@@ -107,7 +105,8 @@ function Categories() {
           flex-row
           items-center
           justify-between
-          overflow-hidden
+          overflow-x-auto
+          scrollbar-thumb-red-300 scrollbar-track-gray-100 scrollbar-thin
         "
         >
             {categories.map((item) => (

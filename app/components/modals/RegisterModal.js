@@ -29,7 +29,7 @@ function RegisterModal() {
     })
     const onSubmit = (data) => {
         setIsLoading(true)
-        axios.post('api/register',data)
+        axios.post('/api/register',data)
             .then(() => {
                 registerState.onClose()
                 setIsLoading(false)

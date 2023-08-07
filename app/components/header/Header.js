@@ -9,6 +9,8 @@ import Logo from "@/app/components/header/Logo";
 
 function Header({currentUser}) {
 
+    console.log("cuurentUser",currentUser)
+
 
     return (
         <div className="fixed w-full bg-white z-10 shadow-sm">
